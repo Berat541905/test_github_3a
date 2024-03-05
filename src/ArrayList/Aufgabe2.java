@@ -7,13 +7,13 @@ import java.util.Iterator;
 
 public class Aufgabe2 {
 
-    public static void trimNonGrowingNumbers(List<Integer> numbers) {
+    public static void trimNonGrowingNumbers(List<Double> numbers) {
         if (numbers == null || numbers.size() < 2) {
             // Nicht genug Elemente zum Vergleichen oder ungültige Liste
             return;
         }
 
-        Iterator<Integer> iterator = numbers.iterator();
+        Iterator<Double> iterator = numbers.iterator();
         double current = iterator.next();
         
         while (iterator.hasNext()) {
@@ -28,7 +28,7 @@ public class Aufgabe2 {
 
     public static void main(String[] args) {
         // Test der Methode mit einem Beispiel
-        List<Integer> numbers = new ArrayList<>(Arrays.asList(1, 2, 3, 2, 5));
+        List<Double> numbers = new ArrayList<>(Arrays.asList(1.0 , 2.0, 3.0, 2.0, 5.0));
         trimNonGrowingNumbers(numbers);
         System.out.println(numbers); 
     }
