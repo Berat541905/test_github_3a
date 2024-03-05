@@ -21,23 +21,23 @@ public class Aufgabe1 {
 		}
 	  public static void main(String[] args) {
 	        // Beispiel für die Verwendung der Methode
-	        List<String> entries = new ArrayList<String>();
-	        entries.add("A1");
-	        entries.add("A2");
-	        entries.add("A3");
-	        entries.add("A4");
-	        entries.add("B1");
-	        entries.add("B2");
-	        entries.add("B3");
-	        entries.add("B4");
-	        entries.add("C1");
-	        entries.add("C2");
-	        entries.add("C3");
-	        entries.add("C4");
+	        List<String> Entries = new ArrayList<String>();
+	        Entries.add("A1");
+	        Entries.add("A2");
+	        Entries.add("A3");
+	        Entries.add("A4");
+	        Entries.add("B1");
+	        Entries.add("B2");
+	        Entries.add("B3");
+	        Entries.add("B4");
+	        Entries.add("C1");
+	        Entries.add("C2");
+	        Entries.add("C3");
+	        Entries.add("C4");
 
 	        try {
-	            reduceToComments(entries);
-	            System.out.println(entries);
+	            reduceToComments(Entries);
+	            System.out.println(Entries);
 	        } catch (IllegalArgumentException e) {
 	            System.out.println(e.getMessage());
 	        }
