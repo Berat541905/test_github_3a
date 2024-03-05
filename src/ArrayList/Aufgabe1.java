@@ -16,6 +16,7 @@ public class Aufgabe1 {
 		            }
 		        }
 		        lines.removeIf(s -> s == null);
-		    }
+		    
+	}
 	}
 
