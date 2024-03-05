@@ -12,7 +12,6 @@ public class battleArena {
     }
    
     
-    
     /**
      * Method to start a fight between two players
      * @param attacker
