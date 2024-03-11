@@ -3,8 +3,12 @@ package linkedList;
 public class MusicalChairsGame {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
+		MusicalChairs mc1 = new MusicalChairs("Leo", "Max", "Paul", "Anna");
+		MusicalChairs mc2 = new MusicalChairs("Madeleine", "Benedikt");
+		
+		System.out.println(mc1);
+		System.out.println(mc2);
 	}
 
 }
