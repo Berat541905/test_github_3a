@@ -1,18 +1,16 @@
 package BattleArena;
- 
+
 import java.util.concurrent.ThreadLocalRandom;
- 
-public class Dragon extends Character {
- 
+
+public class Dragon extends Character{
+
 	private int attackDamage;
 	
 	public Dragon(String name) {
 		super(name);
 		this.attackDamage = ThreadLocalRandom.current().nextInt(20,25);
 	}
- 
-	
-	
+
 	@Override
 	public String toString() {
 		return super.toString();
@@ -23,19 +21,19 @@ public class Dragon extends Character {
 	 * @return = the next damage that will be dealed
 	 */
 	private int calculateAttackDamage() {
-		if(this.isSpecialAbility()==true) {
-			this.attackDamage = ThreadLocalRandom.current().nextInt(20,25)-calculateMalus();
-			System.out.println("Schaden: " + this.attackDamage);
-			return this.attackDamage;
-		} else {
-			this.attackDamage = ThreadLocalRandom.current().nextInt(20,25);
-			System.out.println("Schaden: " + this.attackDamage);
-			return this.attackDamage;
+			if(this.isSpecialAbility()==true) {
+				this.attackDamage = ThreadLocalRandom.current().nextInt(20,25)-calculateMalus();
+				System.out.println("caused damage: " + this.attackDamage);
+				return this.attackDamage;
+			} else {
+				this.attackDamage = ThreadLocalRandom.current().nextInt(20,25);
+				System.out.println("caused damage" + this.attackDamage);
+				return this.attackDamage;
+			}
 		}
-	}
 	
 	/**
-	 * Method to calculate the malus
+	 * Method to calculate the malus 
 	 * @return = the current malus
 	 */
 	private int calculateMalus() {
@@ -53,7 +51,7 @@ public class Dragon extends Character {
 			int currentLifePoints = this.getLifePoints()+10;
 			this.setSpecialAbility(true);
 		} else {
-			System.out.println("Spezialfähigkeit ist bereits aktiviert!");
+			System.out.println("Special ability is already active!");
 		}
 	}
 	
@@ -67,7 +65,7 @@ public class Dragon extends Character {
 			int currentLifePoints = this.getLifePoints()-10;
 			this.setSpecialAbility(true);
 		} else {
-			System.out.println("Spezialfähigkeit ist bereits aktiviert!");
+			System.out.println("Special ability is already active!");
 		}
 	}
 	

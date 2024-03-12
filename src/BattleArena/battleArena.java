@@ -1,49 +1,43 @@
 package BattleArena;
- 
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
- 
 public class battleArena {
-	
 	private Scanner sc;
- 
     public battleArena() {
         this.sc = new Scanner(System.in);
     }
-   
-    
+
     /**
      * Method to start a fight between two players
      * @param attacker
      * @param defender
      */
     public void Fighting(Character attacker, Character defender) {
-		System.out.println(attacker.getName() + ",  ist dran ");
-		System.out.println("Was willst du wählen "
-				+ "\n\t attack"
-				+ "\n\t aktiviere Spezialfähigkeit"
-				+ "\n\t deaktiviere Spezialfähigkeit");
-		String move = sc.nextLine().toLowerCase();
+    	System.out.println(attacker.getName() + ", your turn: ");
+		System.out.println("What do you want to choose? (write a number ... 1-3)"
+				+ "\n\t 1 = attack "
+				+ "\n\t 2 = activate special ability"
+				+ "\n\t 3 = deactivate special ability");
+		int move = sc.nextInt();
 		switch (move) {
-			case "attack":
-				System.out.println(attacker.getName() + " attackiert!");
+			case 1:
+				System.out.println(attacker.getName() + " is attacking!");
 				attacker.attack(defender);
-				System.out.println("Lebenspunkte von " + defender.getName() + ": " + defender.getLifePoints());
+				System.out.println("lifepoints of " + defender.getName() + ": " + defender.getLifePoints());
 				break;
-			case "aktiviert Spezialfähigkeit":
-				System.out.println(attacker.getName() + " hat Spezialfähigkeit aktiviert!");
+			case 2:
+				System.out.println(attacker.getName() + " special activity active!");
 				attacker.setSpecialAbility(true);
 				break;
-			case "deaktiviert Spezialfähigkeit":
-				System.out.println(attacker.getName() + " hat Spezialfähigkeit deaktiviert!");
+			case 3:
+				System.out.println(attacker.getName() + " special activity deactive!");
 				attacker.setSpecialAbility(false);
 				break;
 			default:
-				System.out.println("ungültige Aktion!");
+				System.out.println("invalid action!");
 				break;
 		}
 	}
-	
 	/**
 	 * Method to decide which player begins
 	 * @return
@@ -56,7 +50,6 @@ public class battleArena {
 			return false;
 		}
 	}
-	
 	/**
 	 * Method to check if a player still has life points
 	 * @param player
@@ -69,7 +62,6 @@ public class battleArena {
 			return true;
 		}
 	}
-	
 	/**
 	 * Method to start the fight between two players
 	 * @param player1
@@ -88,7 +80,7 @@ public class battleArena {
 	    while (checkIfPlayerHasLifepoints(player1) && checkIfPlayerHasLifepoints(player2)) {
 	        Fighting(attacker, defender);
 	        if (!checkIfPlayerHasLifepoints(defender)) {
-	            System.out.println(attacker.getName() + " SIEGERRRRRR!");
+	            System.out.println(attacker.getName() + " has wonnn!!!!!");
 	            break;
 	        }
 	        Character temp = attacker;
@@ -97,5 +89,4 @@ public class battleArena {
 	    }
 	    sc.close();
 	}
-	
 }

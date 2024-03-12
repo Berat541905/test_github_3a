@@ -36,7 +36,7 @@ public abstract class Character {
 		public String toString() {
 			return "Character: " + name
 					+ "/n" + "Life Points: " + lifePoints
-					+ "/n" + "Special AbilitSy: " + specialAbility;
+					+ "/n" + "Special Ability: " + specialAbility;
 		}
 		
 		
