@@ -20,7 +20,7 @@ public class MusicalChairs {
 		Iterator<String> itr = this.names.iterator();
 		String tmp = "";
 		while(itr.hasNext()) {
-			tmp += itr.next()+ ", ";
+			tmp += itr.next()+ " ";
 		}
 		return tmp;
 	}
@@ -29,19 +29,20 @@ public class MusicalChairs {
 	}
 	
 	public void rotateAndRemoveLast(int distance) {
-		Collections.rotate(this.names, distance);
-		((LinkedList<String>) this.names).removeLast();
-	
+		if(!this.names.isEmpty()) {
+			 rotate(distance);
+			 ((LinkedList<String>)this.names).removeLast();
+
+		 }	
 	}
 	public String play(int distance) {
         if(!this.names.isEmpty()) {
         	while(this.names.size() > 1) {
-        	int randomNumber = ThreadLocalRandom.current().nextInt();
-        	this.rotateAndRemoveLast(randomNumber);
+        	int randomDistance = ThreadLocalRandom.current().nextInt();
+        	this.rotateAndRemoveLast(randomDistance);
         	System.out.println(this.names);
         	}
         }
-        //optional
         return this.names.get(0);
 	}
 
