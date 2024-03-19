@@ -19,7 +19,7 @@ public class Dwarf extends Character{
 	}
 	
 	/**
-	 * The Methode calculates the attack Damage for the special Ability
+	 * the method calculates the attack Damage for the special Ability
 	 * and the normal attack Damage
 	 * @return the attack Damage
 	 */

@@ -1,9 +1,12 @@
 package BattleArena;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
+
 public class battleArena {
+	
 	private Scanner sc;
-    public battleArena() {
+
+	public battleArena() {
         this.sc = new Scanner(System.in);
     }
 
